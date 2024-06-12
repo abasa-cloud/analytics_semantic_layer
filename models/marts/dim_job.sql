@@ -1,8 +1,8 @@
 WITH base AS (
     SELECT 
         EMPLOYEEID AS employee_id,
-        JOBROLE AS job_role,
-        JOBLEVEL AS job_level,
+        JOBROLE AS role,
+        JOBLEVEL AS role_level,
         DEPARTMENT AS department,
         EDUCATION AS education_level,
         EDUCATIONFIELD AS education_field

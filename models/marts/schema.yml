@@ -10,4 +10,32 @@ sources:
           - name: employeeid
             tests:
               - not_null
-              - unique
+              - unique 
+
+models: 
+  - name: dim_employees
+    description: "Dimension table for employee data"
+
+  - name: dim_job
+    description: "Includes details about the position"
+
+  - name: dim_performance
+    description: "Staging table for sentiment data"
+
+  - name: dim_salary
+    description: "Includes all information related with employees salary"
+
+  - name: fct_employees
+    description: "Table including all data needed to evaluate the working profile of the employee."
+
+  - name: mtr_employee
+    description: "Model used to create semantic model for attrition metrics" 
+
+  - name: min_max_scaler
+    config:
+      materialized: incremental
+      tags: ['python','function']
+      packages:
+        - pandas
+    docs:
+      node_color : "purple"
