@@ -1,0 +1,14 @@
+semantic_models:
+  - name: job
+    description: 'Job'
+    model: ref('dim_job')
+    
+    entities:
+      - name: job_id
+        type: primary
+        expr: job_id
+
+    dimensions:
+      - name: job_role
+        type: categorical
+        expr: job_role
