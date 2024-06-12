@@ -6,4 +6,3 @@ sources:
     schema: raw_db
     tables:
       - name: hr_raw_
-

@@ -1,0 +1,11 @@
+{
+    "account" : "xqefmfm-hakkodainc_partner",
+    "user" : "alejandro_barrantes@hakkoda.io",
+    "password": "Warwick6896@@",
+    "role" : "sysadmin",
+    "warehouse" : "headless_bi",
+    "database" : "hbi_db",
+    "schema" : "raw"
+}
+
+
