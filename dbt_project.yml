@@ -5,6 +5,8 @@
 name: 'semantic_layer'
 version: '1.0.0'
 config-version: 2
+dbt-cloud:
+  project-id: 70403103936074
 
 # This setting configures which "profile" dbt uses for this project.
 profile: 'default'
@@ -12,7 +14,8 @@ profile: 'default'
 # These configurations specify where dbt should look for different types of files.
 # The `model-paths` config, for example, states that models in this project can be
 # found in the "models/" directory. You probably won't need to change these!
-model-paths: ["models/"]
+
+model-paths: ["models"]
 analysis-paths: ["analyses"]
 test-paths: ["tests"]
 seed-paths: ["seeds"]
@@ -37,6 +40,7 @@ clean-targets:         # directories to be removed by `dbt clean`
 
 models:
   semantic_layer:
-    marts:
+    models/base:
+      +materialized: view
+    models/marts:
       +materialized: table
-      +python_model: true

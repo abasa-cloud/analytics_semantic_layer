@@ -1,0 +1,30 @@
+semantic_models:
+  - name: employees_details
+    description: 'Employee Details'
+    model: ref('fct_employees')
+    
+    defaults:
+      agg_time_dimension: hire_date
+
+    entities:
+      - name: employee_detail_id
+        type: primary
+        expr: employee_detail_id
+      - name: employee
+        type: foreign
+        expr: employee_id
+      - name: job
+        type: foreign
+        expr: job_id
+
+    dimensions:
+      - name: hire_date
+        type: time
+        type_params:
+          time_granularity: day
+
+    measures:
+      - name: attrition_test
+        description: The total USD value of valid transactions only
+        expr: CASE WHEN attrition = 'Yes' then 1 else 0 end 
+        agg: sum

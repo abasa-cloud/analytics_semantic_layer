@@ -1,0 +1,17 @@
+semantic_models:
+  - name: employee
+    description: 'Employee'
+    model: ref('dim_employee')
+    
+    entities:
+      - name: employee_id
+        type: primary
+        expr: employee_id
+
+    dimensions:
+      - name: gender
+        type: categorical
+        expr: gender
+      - name: marital_status
+        type: categorical
+        expr: marital_status
