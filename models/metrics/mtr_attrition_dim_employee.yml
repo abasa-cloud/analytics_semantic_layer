@@ -1,0 +1,10 @@
+version: 2 
+
+metrics: 
+  - name: total_employees
+    description: the metric description 
+    type: simple
+    label: Total employees
+    type_params: 
+      measure:
+        name: total_employees

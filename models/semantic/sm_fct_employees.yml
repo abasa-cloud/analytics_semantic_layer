@@ -16,6 +16,12 @@ semantic_models:
       - name: job
         type: foreign
         expr: job_id
+      - name: role
+        type: foreign
+        expr: role
+      - name: emp_gender
+        type: foreign
+        expr: gender
 
     dimensions:
       - name: hire_date
@@ -24,7 +30,7 @@ semantic_models:
           time_granularity: day
 
     measures:
-      - name: attrition_test
+      - name: attrition_total
         description: The total USD value of valid transactions only
         expr: CASE WHEN attrition = 'Yes' then 1 else 0 end 
         agg: sum

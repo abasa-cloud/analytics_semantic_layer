@@ -2,7 +2,10 @@ semantic_models:
   - name: employee
     description: 'Employee'
     model: ref('dim_employee')
-    
+
+    defaults:
+      agg_time_dimension: hrn_date   
+
     entities:
       - name: employee_id
         type: primary
@@ -14,4 +17,14 @@ semantic_models:
         expr: gender
       - name: marital_status
         type: categorical
-        expr: marital_status
+        expr: marital_status 
+      - name: hrn_date
+        type: time
+        type_params:
+          time_granularity: day
+          
+    measures: 
+      - name: total_employees
+        description: Total count of employees within the company.
+        expr: employee_id
+        agg: count_distinct

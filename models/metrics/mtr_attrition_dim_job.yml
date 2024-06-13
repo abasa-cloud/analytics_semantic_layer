@@ -1,0 +1,26 @@
+version: 2
+
+metrics: 
+  - name: attrition_by_role
+    description: total attrition segregated by role
+    type: simple # Pointers to a measure created in a semantic model
+    label: Attrition by role
+    type_params:
+      measure: 
+        name: attrition_count 
+        fill_nulls_with: 0 
+        join_to_timespine: true
+    filter: |
+      {{ Metric('attrition_count', group_by = ['job_role']) }}
+
+  - name: attrition_by_department
+    description: total attrition segregated by department
+    type: simple # Pointers to a measure created in a semantic model
+    label: Attrition by department
+    type_params:
+      measure: 
+        name: attrition_count 
+        fill_nulls_with: 0 
+        join_to_timespine: true
+    filter: |
+      {{ Metric('attrition_count', group_by = ['department']) }}
