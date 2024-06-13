@@ -3,6 +3,9 @@ semantic_models:
     description: 'Job'
     model: ref('dim_job')
     
+    defaults:
+      agg_time_dimension: date_of_hiring
+
     entities:
       - name: job_id
         type: primary
@@ -12,3 +15,18 @@ semantic_models:
       - name: job_role
         type: categorical
         expr: job_role
+      
+      - name: deparment
+        type: categorical
+        expr: deparment
+
+      - name: date_of_hiring
+        type: time
+        type_params:
+          time_granularity: day
+
+    measures:
+      - name: attrition_count
+        description: The total USD value of valid transactions only
+        expr: CASE WHEN attrition = 'Yes' then 1 else 0 end 
+        agg: sum

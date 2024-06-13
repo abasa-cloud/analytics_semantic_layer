@@ -4,7 +4,8 @@ WITH base AS (
         EMPLOYEEID AS employee_id,
         HIREDATE AS hire_date,
         JOBROLE || ' ' || JOBLEVEL AS role_id,
-        ATTRITION AS attrition
+        ATTRITION AS attrition,
+        JOBROLE AS role
         -- TERMINATIONDATE AS termination_date,
         -- VOLUNTARYATTRITION AS voluntary_attrition,
         -- EXITINTERVIEWCOMPLETED AS final_interview_completed,
