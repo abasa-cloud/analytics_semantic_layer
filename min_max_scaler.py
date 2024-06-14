@@ -1,3 +1,6 @@
+# MidMax Scaler transformation to HR_Raw table created in Snowflake
+# WH: headless_bi | DB: semantic_layer | SCH: raw_db
+
 import snowflake.snowpark as sp
 from snowflake.snowpark.functions import col
 from sklearn.preprocessing import MinMaxScaler
