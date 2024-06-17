@@ -1,7 +1,7 @@
 {
     "account" : "xqefmfm-hakkodainc_partner",
     "user" : "alejandro_barrantes@hakkoda.io",
-    "password": "Warwick6896@@",
+    "password": "password", #password for account.
     "role" : "sysadmin",
     "warehouse" : "headless_bi",
     "database" : "hbi_db",
